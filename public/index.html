@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classes & Inheritence</title>
+</head>
+
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    padding-bottom: 200px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 500px);
+    width: 100%;
+    gap: 150px;
+  }
+
+  .inner-container {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .House {
+    height: 80%;
+    width: 80%;
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.VCnUoQLl27Y3FN1YilXJggHaE8%26pid%3DApi&f=1') center no-repeat;
+    background-size: cover;
+  }
+
+  .Apartment {
+    height: 80%;
+    width: 80%;
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.fortunebuilders.com%2Fwp-content%2Fuploads%2F2018%2F02%2Finvesting-in-apartment-buildings.jpg&f=1&nofb=1') center no-repeat;
+    background-size: cover;
+  }
+
+  .Loft {
+    height: 80%;
+    width: 80%;
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.SBFhH9RlAvJBlibBlluipwHaE8%26pid%3DApi&f=1') center no-repeat;
+    background-size: cover;
+  }
+
+  .Studio {
+    height: 80%;
+    width: 80%;
+    background: url('  https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Adriaen_van_Ostade_006.jpg/500px-Adriaen_van_Ostade_006.jpg') center no-repeat;
+    background-size: cover;
+
+  }
+
+  .Tipi {
+    height: 80%;
+    width: 80%;
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.0jdcSwToq40q0qHQuqEvxAHaE8%26pid%3DApi&f=1') center no-repeat;
+    background-size: cover;
+
+  }
+
+  .Vila {
+    height: 80%;
+    width: 80%;
+    background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.2CH_jy8IwgPtx44bB3FHIwHaFU%26pid%3DApi&f=1') center no-repeat;
+    background-size: cover;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <div class="inner-container">
+      <div class="House"></div>
+      <form id="house-form">
+        <h2>Number of houses: <span id="house-counter"></span></h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <button type="submit">Create house</button>
+      </form>
+    </div>
+
+
+    <div class="inner-container">
+      <div class="Apartment"></div>
+      <form id="apt-form">
+        <h2>Number of apartments: <span id="apt-counter"></span></h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <div class="form-group">
+          <label for="floor">Floor number: </label>
+          <input type="text" id="floor" name="floor" placeholder="floor...">
+        </div>
+        <button type="submit">Create Apt</button>
+      </form>
+    </div>
+
+    <div class="inner-container">
+      <div class="Loft"></div>
+      <form id="loft-form">
+        <h2>Loft</h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <div class="form-group">
+          <label for="floor">Floor number: </label>
+          <input type="text" id="floor" name="floor" placeholder="floor...">
+        </div>
+        <div class="form-group">
+          <label for="purpose">Purpose: </label>
+          <input type="text" id="purpose" name="purpose" placeholder="purpose...">
+        </div>
+        <div class="form-group">
+          <label for="windows">windows: </label>
+          <input type="text" id="windows" name="windows" placeholder="windows...">
+        </div>
+        <button type="submit">Create Loft</button>
+      </form>
+    </div>
+
+    <div class="inner-container">
+      <div class="Studio"></div>
+      <form id="studio-form">
+        <h2>Studio</h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <div class="form-group">
+          <label for="floor">Floor number: </label>
+          <input type="text" id="floor" name="floor" placeholder="floor...">
+        </div>
+        <div class="form-group">
+          <label for="purpose">Purpose: </label>
+          <input type="text" id="purpose" name="purpose" placeholder="purpose...">
+        </div>
+        <button type="submit">Create Studio</button>
+      </form>
+    </div>
+
+    <div class="inner-container">
+      <div class="Tipi"></div>
+      <form id="tipi-form">
+        <h2>Tipi</h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <div class="form-group">
+          <label for="color1">First color: </label>
+          <input type="text" id="color1" name="color1" placeholder="first color...">
+        </div>
+        <div class="form-group">
+          <label for="color2">Second color: </label>
+          <input type="text" id="color2" name="color2" placeholder="Second color...">
+        </div>
+        <button type="submit">Create Tipi</button>
+      </form>
+    </div>
+
+    <div class="inner-container">
+      <div class="Vila"></div>
+      <form id="vila-form">
+        <h2>Vila</h2>
+        <div class="form-group">
+          <label for="numOfRooms">Number of rooms: </label>
+          <input type="text" id="numOfRooms" name="numOfRooms" placeholder="number of rooms...">
+        </div>
+        <div class="form-group">
+          <label for="squareMetre">Square metre: </label>
+          <input type="text" id="squareMetre" name="squareMetre" placeholder="m²...">
+        </div>
+        <div class="form-group">
+          <label for="numOfSwimmingPools">Swimming Pools: </label>
+          <input type="text" id="numOfSwimmingPools" name="numOfSwimmingPools" placeholder="swimming pools...">
+        </div>
+        <button type="submit">Create Vila</button>
+      </form>
+    </div>
+  </div>
+
+  <script type="module" defer src="index.js"></script>
+
+
+</body>
+
+</html>
